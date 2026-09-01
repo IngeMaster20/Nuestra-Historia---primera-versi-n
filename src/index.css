@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-cream text-ink font-body antialiased;
+    @apply dark:bg-night dark:text-blush;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-blush text-plum;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-plum px-6 py-3
+      text-sm font-medium text-cream transition-transform duration-150
+      active:scale-95 hover:bg-rose-deep dark:bg-gold dark:text-night dark:hover:bg-gold-soft;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-rose/50 px-6 py-3
+      text-sm font-medium text-plum transition-colors duration-150
+      hover:bg-blush/40 dark:border-gold/40 dark:text-blush dark:hover:bg-night-card;
+  }
+  .input-field {
+    @apply w-full rounded-2xl border border-rose/30 bg-paper px-4 py-3 text-ink
+      placeholder:text-ink-soft/60 outline-none transition-colors focus:border-rose
+      dark:border-gold/25 dark:bg-night-card dark:text-blush dark:placeholder:text-blush/40;
+  }
+  .surface-card {
+    @apply rounded-soft bg-paper shadow-card dark:bg-night-card dark:shadow-none dark:ring-1 dark:ring-gold/10;
+  }
+}
+
+/* thin, elegant scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: theme('colors.rose'); border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
