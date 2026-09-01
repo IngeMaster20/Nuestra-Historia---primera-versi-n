@@ -9,7 +9,7 @@ import { daysUntilNextOccurrence, formatShortDate } from "@/utils/dateHelpers";
 import type { Memory, Note, ImportantDate } from "@/types";
 
 // Fecha en que comenzó la relación — ajústala en Configuración más adelante.
-const RELATIONSHIP_START = "2025-09-07";
+const RELATIONSHIP_START = "2025-09-06";
 
 const phrases = [
   "Hoy también es un buen día para crear un recuerdo.",

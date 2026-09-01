@@ -2,6 +2,12 @@ import { format, differenceInCalendarDays } from "date-fns";
 import { es } from "date-fns/locale";
 
 function parseDateOnly(iso: string): Date {
+  const isDateOnly = /^\d{4}-\d{2}-\d{2}$/.test(iso);
+
+  if (!isDateOnly) {
+    return new Date(iso);
+  }
+
   const [year, month, day] = iso.split("-").map(Number);
 
   return new Date(year, month - 1, day);
